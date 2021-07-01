@@ -178,12 +178,7 @@
     } else if (_photoURL) {
         
         // Check what type of url it is
-        if ([[[_photoURL scheme] lowercaseString] isEqualToString:@"assets-library"]) {
-            
-            // Load from assets library
-            [self _performLoadUnderlyingImageAndNotifyWithAssetsLibraryURL: _photoURL];
-            
-        } else if ([_photoURL isFileReferenceURL]) {
+        if ([_photoURL isFileReferenceURL]) {
             
             // Load from local file async
             [self _performLoadUnderlyingImageAndNotifyWithLocalFileURL: _photoURL];
@@ -250,34 +245,6 @@
                     MWLog(@"Error loading photo from path: %@", url.path);
                 }
             } @finally {
-                [self performSelectorOnMainThread:@selector(imageLoadingComplete) withObject:nil waitUntilDone:NO];
-            }
-        }
-    });
-}
-
-// Load from asset library async
-- (void)_performLoadUnderlyingImageAndNotifyWithAssetsLibraryURL:(NSURL *)url {
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        @autoreleasepool {
-            @try {
-                ALAssetsLibrary *assetslibrary = [[ALAssetsLibrary alloc] init];
-                [assetslibrary assetForURL:url
-                               resultBlock:^(ALAsset *asset){
-                                   ALAssetRepresentation *rep = [asset defaultRepresentation];
-                                   CGImageRef iref = [rep fullScreenImage];
-                                   if (iref) {
-                                       self.underlyingImage = [UIImage imageWithCGImage:iref];
-                                   }
-                                   [self performSelectorOnMainThread:@selector(imageLoadingComplete) withObject:nil waitUntilDone:NO];
-                               }
-                              failureBlock:^(NSError *error) {
-                                  self.underlyingImage = nil;
-                                  MWLog(@"Photo from asset library error: %@",error);
-                                  [self performSelectorOnMainThread:@selector(imageLoadingComplete) withObject:nil waitUntilDone:NO];
-                              }];
-            } @catch (NSException *e) {
-                MWLog(@"Photo from asset library error: %@", e);
                 [self performSelectorOnMainThread:@selector(imageLoadingComplete) withObject:nil waitUntilDone:NO];
             }
         }
