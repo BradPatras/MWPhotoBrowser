@@ -34,7 +34,7 @@ Pod::Spec.new do |s|
   }
   s.requires_arc = true
 
-  s.frameworks = 'ImageIO', 'QuartzCore', 'AssetsLibrary', 'MediaPlayer'
+  s.frameworks = 'ImageIO', 'QuartzCore', 'MediaPlayer'
   s.weak_frameworks = 'Photos'
 
   s.dependency 'MBProgressHUD', '~> 0.9'
