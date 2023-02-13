@@ -27,7 +27,7 @@ Pod::Spec.new do |s|
     :git => 'https://github.com/rzulkoski/MWPhotoBrowser.git',
     :branch => 'bt-fixes'
   }
-  s.platform = :ios, '7.0'
+  s.platform = :ios, '15.0'
   s.source_files = 'Pod/Classes/**/*'
   s.resource_bundles = {
     'MWPhotoBrowser' => ['Pod/Assets/*.png']
