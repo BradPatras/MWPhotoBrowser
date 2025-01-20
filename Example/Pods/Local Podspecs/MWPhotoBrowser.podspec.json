@@ -18,11 +18,11 @@
   },
   "social_media_url": "https://twitter.com/mwaterfall",
   "source": {
-    "git": "https://github.com/mwaterfall/MWPhotoBrowser.git",
-    "tag": "2.1.2"
+    "git": "https://github.com/rzulkoski/MWPhotoBrowser.git",
+    "branch": "bt-fixes"
   },
   "platforms": {
-    "ios": "7.0"
+    "ios": "15.0"
   },
   "source_files": "Pod/Classes/**/*",
   "resource_bundles": {
@@ -34,8 +34,7 @@
   "frameworks": [
     "ImageIO",
     "QuartzCore",
-    "AssetsLibrary",
-    "MediaPlayer"
+    "AVKit"
   ],
   "weak_frameworks": "Photos",
   "dependencies": {
@@ -44,10 +43,6 @@
     ],
     "DACircularProgress": [
       "~> 2.3"
-    ],
-    "SDWebImage": [
-      "~> 3.7",
-      "!= 3.7.2"
     ]
   }
 }
