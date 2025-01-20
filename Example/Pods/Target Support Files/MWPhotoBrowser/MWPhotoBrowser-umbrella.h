@@ -10,6 +10,9 @@
 #endif
 #endif
 
+#import "DACircularProgressView.h"
+#import "DALabeledCircularProgressView.h"
+#import "MBProgressHUD.h"
 #import "MWCaptionView.h"
 #import "MWCommon.h"
 #import "MWGridCell.h"
