@@ -14,8 +14,8 @@ let package = Package(
 	targets: [
 		.binaryTarget(
 			name: "MWPhotoBrowser",
-			url: "https://github.com/BradPatras/MWPhotoBrowser/releases/download/v3.0.0/MWPhotoBrowser.xcframework.zip",
-			checksum: "f04d895f8e80897d71622e3d4a36e935364c6686af8fb325c14171500f90d3f5"
+			url: "https://github.com/BradPatras/MWPhotoBrowser/releases/download/v3.0.1/MWPhotoBrowser.xcframework.zip",
+			checksum: "14abedc3b24dff9da4d6b77d182baa0d250451d7c495ce9978445c95f2fa0308"
 		)
 	]
 )
