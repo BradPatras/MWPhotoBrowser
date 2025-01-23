@@ -1,6 +1,6 @@
 # MWPhotoBrowser
 
-This repo contains a fork of the MWPhotoBrowser that has been gutted, chopped up, and crammed into a swift package so that I can fully remove cocoapods from an app that relies on it.
+This repo contains a fork of the MWPhotoBrowser that has been gutted, chopped up, and crammed into an xcframwork so that I can fully remove cocoapods from a project where MWPhotoBrowser was the last holdout.
 
 ‼️‼️ - This version of MWPhotoBrowser has had its SDWebImage integration completely removed, so it can no longer load images from urls. This was done to eliminate the external dependencies of this library (and because I wasn't using it anyway). - ‼️‼️
 
