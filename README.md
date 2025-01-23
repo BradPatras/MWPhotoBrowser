@@ -7,13 +7,11 @@ This repo contains a fork of the MWPhotoBrowser that has been gutted, chopped up
 After attempting to use `cocoapods packager` and failing, I followed the steps from [this blog to create the xcframework.](https://www.nutrient.io/blog/supporting-xcframeworks/)
 
 ```shell
-# Device slice.
-xcodebuild archive -workspace 'MyFramework.xcworkspace' -scheme 'MyFramework.framework' -configuration Release -destination 'generic/platform=iOS' -archivePath '/path/to/archives/MyFramework.framework-iphoneos.xcarchive' SKIP_INSTALL=NO
+xcodebuild archive -workspace 'MWPhotoBrowser.xcworkspace' -scheme 'MWPhotoBrowser' -configuration Release -destination 'generic/platform=iOS' -archivePath 'archives/MWPhotoBrowser.framework-iphoneos.xcarchive' SKIP_INSTALL=NO
 
-# Simulator slice.
-xcodebuild archive -workspace 'MyFramework.xcworkspace' -scheme 'MyFramework.framework' -configuration Release -destination 'generic/platform=iOS Simulator' -archivePath '/path/to/archives/MyFramework.framework-iphonesimulator.xcarchive' SKIP_INSTALL=NO
+xcodebuild archive -workspace 'MWPhotoBrowser.xcworkspace' -scheme 'MWPhotoBrowser' -configuration Release -destination 'generic/platform=iOS Simulator' -archivePath 'archives/MWPhotoBrowser.framework-iphonesimulator.xcarchive' SKIP_INSTALL=NO
 
-xcodebuild -create-xcframework -framework '/path/to/archives/MyFramework.framework-iphonesimulator.xcarchive/Products/Library/Frameworks/MyFramework.framework' -framework '/path/to/archives/MyFramework.framework-iphoneos.xcarchive/Products/Library/Frameworks/MyFramework.framework' -output '/output/path/MyFramework.xcframework'
+xcodebuild -create-xcframework -framework 'archives/MWPhotoBrowser.framework-iphonesimulator.xcarchive/Products/Library/Frameworks/MWPhotoBrowser.framework' -framework 'archives/MWPhotoBrowser.framework-iphoneos.xcarchive/Products/Library/Frameworks/MWPhotoBrowser.framework' -output 'archives/MWPhotoBrowser.xcframework'
 ```
 ## A simple iOS photo and video browser with optional grid view, captions and selections.
 
