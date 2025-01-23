@@ -6,6 +6,7 @@
 //  Copyright 2010 d3i. All rights reserved.
 //
 
+#import <AVKit/AVKit.h>
 #import <UIKit/UIKit.h>
 #import "MWPhoto.h"
 #import "MWPhotoProtocol.h"
@@ -38,7 +39,7 @@
 
 @end
 
-@interface MWPhotoBrowser : UIViewController <UIScrollViewDelegate, UIActionSheetDelegate>
+@interface MWPhotoBrowser : UIViewController <UIScrollViewDelegate, UIActionSheetDelegate, AVPlayerViewControllerDelegate>
 
 @property (nonatomic, weak) IBOutlet id<MWPhotoBrowserDelegate> delegate;
 @property (nonatomic) BOOL zoomPhotosToFill;
